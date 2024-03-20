@@ -25,7 +25,7 @@ def task_details_api(request, pk=None):
     task = get_object_or_404(Task, pk=pk)
 
     if request.method == 'GET':
-        serializers = TaskSerializers(Task)
+        serializers = TaskSerializers(task)
         return Response(data=serializers.data, status=200)
 
     if request.method == 'DELETE':
